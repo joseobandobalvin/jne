@@ -1,66 +1,109 @@
-import 'package:jne/configs/themes/app_colors.dart';
-import 'package:jne/configs/themes/custom_text_styles.dart';
-import 'package:jne/configs/themes/ui_parameters.dart';
-import 'package:jne/controllers/zoom_drawer_controller.dart';
-import 'package:jne/models/user.dart';
-import 'package:jne/providers/local/auth_client.dart';
-import 'package:jne/screens/home/menu_screen.dart';
-import 'package:jne/widgets/app_circle_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/config.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:get/get.dart';
 
-class HomeScreen extends GetView<MyZoomDrawerController> {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _pinned = true;
+  bool _snap = false;
+  bool _floating = false;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GetBuilder<MyZoomDrawerController>(
-        builder: (_) {
-          return ZoomDrawer(
-            angle: 0.0,
-            borderRadius: 40.0,
-            style: DrawerStyle.defaultStyle,
-            slideWidth: MediaQuery.of(context).size.width * 0.8,
-            showShadow: true,
-            controller: _.zoomDrawerController,
-            menuBackgroundColor: Colors.white.withOpacity(0.5),
-            menuScreenWidth: double.maxFinite,
-            menuScreen: MenuScreen(),
-            mainScreen: Container(
-              width: double.maxFinite,
-              decoration: BoxDecoration(
-                gradient: mainGradient(),
-              ),
-              child: SafeArea(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(mobileScreenPadding),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AppCircleButton(
-                            onTap: controller.toogleDrawer,
-                            child: const Icon(Icons.menu),
-                          ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            "Pagina Home inicio sesion",
-                            style: headerText,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            pinned: _pinned,
+            snap: _snap,
+            floating: _floating,
+            expandedHeight: 60.0,
+            flexibleSpace: const FlexibleSpaceBar(
+              title: Text('SliverAppBar'),
+              background: FlutterLogo(),
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20,
+              child: Center(
+                child: Text('Scroll to see the SliverAppBar in effect.'),
               ),
             ),
-          );
-        },
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Container(
+                  color: index.isOdd ? Colors.white : Colors.black12,
+                  height: 100.0,
+                  child: Center(
+                    child: Text('$index', textScaleFactor: 5),
+                  ),
+                );
+              },
+              childCount: 20,
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: OverflowBar(
+            overflowAlignment: OverflowBarAlignment.center,
+            children: <Widget>[
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const Text('pinned'),
+                  Switch(
+                    onChanged: (bool val) {
+                      setState(() {
+                        _pinned = val;
+                      });
+                    },
+                    value: _pinned,
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const Text('snap'),
+                  Switch(
+                    onChanged: (bool val) {
+                      setState(() {
+                        _snap = val;
+                        // Snapping only applies when the app bar is floating.
+                        _floating = _floating || _snap;
+                      });
+                    },
+                    value: _snap,
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  const Text('floating'),
+                  Switch(
+                    onChanged: (bool val) {
+                      setState(() {
+                        _floating = val;
+                        _snap = _snap && _floating;
+                      });
+                    },
+                    value: _floating,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
