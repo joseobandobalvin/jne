@@ -1,0 +1,29 @@
+{
+    "success": true,
+    "name": "Administrador",
+    "email": "demo@gmail.com",
+    "seriedefault": null,
+    "token": "RIPV1PWmvxBDZGfVTgrrlmObab5fm4qW96I0Wz0NlwuS3qaBHHlyOnxDH9iO",
+    "restaurant_role_id": 3,
+    "ruc": "20444444444",
+    "app_logo": "app_logo_20444444444.jpg",
+    "app_logo_base64": "",
+    "company": {
+        "name": "ENTEL PERU S.A.",
+        "address": "LIMA, Lima, Lima, AV ARGENTINA 666",
+        "phone": "999999999",
+        "email": "demo@gmail.com"
+    },
+    "app_configuration": {
+        "id": 1,
+        "show_image_item": true,
+        "print_format_pdf": "ticket",
+        "theme_color": "red",
+        "card_color": "multicolored",
+        "header_waves": 0,
+        "app_mode": "pos",
+        "direct_print": true,
+        "has_igv_31556": false,
+        "igv_31556_percentage": 0.1
+    }
+}
