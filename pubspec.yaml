@@ -1,15 +1,12 @@
 name: jne
 description: A new Flutter project.
 
-
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
 
 version: 1.0.0+1
 
 environment:
   sdk: '>=2.18.2 <3.0.0'
-
 
 dependencies:
   cached_network_image: ^3.2.2
@@ -24,12 +21,11 @@ dependencies:
   google_fonts: ^3.0.1
   http: ^0.13.5
   intl: ^0.17.0
+  rive: ^0.9.1
   shared_preferences: ^2.0.15
   url_launcher: ^6.1.5
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -37,10 +33,11 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -58,10 +55,8 @@ flutter:
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

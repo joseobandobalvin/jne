@@ -14,10 +14,10 @@ class AccountProvider {
     }
 
     //await Future.delayed(Duration(seconds: 1));
-    return User(
-      email: "test@test.com",
-      name: "Jose obando balvin",
-      ruc: "12132313413",
-    );
+    // return User(
+    //   email: "test@test.com",
+    //   name: "Jose obando balvin",
+    //   ruc: "12132313413",
+    // );
   }
 }

@@ -37,10 +37,10 @@ class AuthClient {
       throw Exception('token is null');
     }
 
-    return User(
-      name: preferences.getString("name").toString(),
-      email: preferences.getString("email").toString(),
-      ruc: preferences.getString("ruc").toString(),
-    );
+    // return User(
+    //   name: preferences.getString("name").toString(),
+    //   email: preferences.getString("email").toString(),
+    //   ruc: preferences.getString("ruc").toString(),
+    // );
   }
 }

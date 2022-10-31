@@ -8,29 +8,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _pinned = true;
-  bool _snap = false;
-  bool _floating = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar(
-            pinned: _pinned,
-            snap: _snap,
-            floating: _floating,
+          const SliverAppBar(
+            leading: Icon(Icons.menu),
+            actions: [
+              Icon(Icons.usb_rounded),
+            ],
+            title: Text("JNE"),
+            //pinned: false,
+            snap: true,
+            floating: true,
             expandedHeight: 60.0,
-            flexibleSpace: const FlexibleSpaceBar(
-              title: Text('SliverAppBar'),
-              background: FlutterLogo(),
-            ),
+            // flexibleSpace: FlexibleSpaceBar(
+            //   title: Text('SliverAppBar'),
+            // ),
           ),
           const SliverToBoxAdapter(
             child: SizedBox(
               height: 20,
               child: Center(
-                child: Text('Scroll to see the SliverAppBar in effect.'),
+                child: Text('Lista de candidatos segun nombres'),
               ),
             ),
           ),
@@ -50,61 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: OverflowBar(
-            overflowAlignment: OverflowBarAlignment.center,
-            children: <Widget>[
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const Text('pinned'),
-                  Switch(
-                    onChanged: (bool val) {
-                      setState(() {
-                        _pinned = val;
-                      });
-                    },
-                    value: _pinned,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const Text('snap'),
-                  Switch(
-                    onChanged: (bool val) {
-                      setState(() {
-                        _snap = val;
-                        // Snapping only applies when the app bar is floating.
-                        _floating = _floating || _snap;
-                      });
-                    },
-                    value: _snap,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const Text('floating'),
-                  Switch(
-                    onChanged: (bool val) {
-                      setState(() {
-                        _floating = val;
-                        _snap = _snap && _floating;
-                      });
-                    },
-                    value: _floating,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
+
+  Future getCandidatos() async {}
 }
