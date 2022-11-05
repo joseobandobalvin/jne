@@ -1,4 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:jne/controllers/home_controller.dart';
+import 'package:jne/models/user.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,6 +12,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Future<List<User>> usuarios;
+  final HomeController _homeController = HomeController();
+
+  //var users = Get.arguments;
+
+  @override
+  void initState() {
+    super.initState();
+    usuarios = _homeController.getCandidates();
+    //print(usuarios);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
           const SliverAppBar(
             leading: Icon(Icons.menu),
             actions: [
-              Icon(Icons.usb_rounded),
+              Icon(
+                Icons.search_rounded,
+                size: 23,
+              ),
             ],
             title: Text("JNE"),
             //pinned: false,
@@ -27,32 +46,69 @@ class _HomeScreenState extends State<HomeScreen> {
             //   title: Text('SliverAppBar'),
             // ),
           ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 20,
-              child: Center(
-                child: Text('Lista de candidatos segun nombres'),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  height: 100,
+                  color: Colors.deepPurpleAccent[700],
+                ),
               ),
             ),
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return Container(
-                  color: index.isOdd ? Colors.white : Colors.black12,
-                  height: 100.0,
-                  child: Center(
-                    child: Text('$index', textScaleFactor: 5),
-                  ),
-                );
-              },
-              childCount: 20,
-            ),
-          ),
+          FutureBuilder(
+            future: usuarios,
+            builder: (context, snapshot) {
+              var childCount = 0;
+              if (snapshot.connectionState != ConnectionState.done) {
+                childCount = 0;
+              } else {
+                childCount = snapshot.data!.length;
+              }
+              return SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    var idHojaVida = snapshot.data![index].idHojaVida.toInt();
+
+                    return Card(
+                      margin: const EdgeInsets.fromLTRB(10, 3, 10, 3),
+                      //color: Colors.black12,
+                      child: ListTile(
+                        leading: CachedNetworkImage(
+                          imageUrl:
+                              "https://declara.jne.gob.pe/Assets/Fotos-HojaVida/$idHojaVida.jpg",
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) =>
+                                  CircularProgressIndicator(
+                                      value: downloadProgress.progress),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                        ),
+                        title: Text(snapshot.data![index].nombreCompleto,
+                            style: const TextStyle(color: Colors.blue)),
+                        subtitle: Text(snapshot.data![index]
+                            .organizacionPolitica), //todo set your data from response
+                      ),
+                    );
+                    // return Container(
+                    //   color: index.isOdd ? Colors.white : Colors.black12,
+                    //   height: 100.0,
+                    //   child: Center(
+                    //     child: Text(
+                    //       snapshot.data![index].nombreCompleto,
+                    //     ),
+                    //   ),
+                    // );
+                  },
+                  childCount: childCount,
+                ),
+              );
+            },
+          )
         ],
       ),
     );
   }
-
-  Future getCandidatos() async {}
 }

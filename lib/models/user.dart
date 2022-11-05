@@ -1,16 +1,14 @@
 class User {
   final String estado,
       nombreCompleto,
+      numeroDocumento,
       organizacionPolitica,
       postulaDepartamento,
       postulaDistrito,
       postulaProvincia,
       rutaArchivo;
-  final int idHojaVida,
-      idOrganizacionPolitica,
-      numeroCandidato,
-      numeroDocumento;
   final int rowNumber;
+  final double idOrganizacionPolitica, numeroCandidato, idHojaVida;
 
   User({
     required this.estado,
@@ -26,4 +24,20 @@ class User {
     required this.numeroDocumento,
     required this.rowNumber,
   });
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+        estado: json['estado'],
+        nombreCompleto: json['nombreCompleto'],
+        organizacionPolitica: json['organizacionPolitica'],
+        postulaDepartamento: json['postulaDepartamento'],
+        postulaDistrito: json['postulaDistrito'],
+        postulaProvincia: json['postulaProvincia'],
+        rutaArchivo: json['rutaArchivo'],
+        idHojaVida: json['idHojaVida'],
+        idOrganizacionPolitica: json['idOrganizacionPolitica'],
+        numeroCandidato: json['numeroCandidato'],
+        numeroDocumento: json['numeroDocumento'],
+        rowNumber: json['rowNumber']);
+  }
 }

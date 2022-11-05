@@ -14,11 +14,6 @@ class AuthController extends GetxController {
   final AuthClient _authClient = AuthClient();
   //final AccountRepoImp _accountRepoImp = AccountRepoImp();
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
   void onEmailChanged(String t) {
     _email = t;
   }

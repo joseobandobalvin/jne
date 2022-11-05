@@ -8,17 +8,20 @@ import 'package:get/get.dart';
 import 'package:jne/screens/splash/splash_screen.dart';
 
 class AppRoutes {
+  static const String splashPage = "/";
+  static const String homePage = "/home";
+
   static List<GetPage> routes() => [
         GetPage(
-          name: "/",
+          name: splashPage,
           page: () => const SplashScreen(),
           binding: BindingsBuilder(() {
             Get.put(SplashController());
           }),
         ),
         GetPage(
-          name: "/home",
-          page: () => const HomeScreen(),
+          name: homePage,
+          page: () => HomeScreen(),
           binding: BindingsBuilder(() {
             Get.put(AuthController());
             Get.put(HomeController());
