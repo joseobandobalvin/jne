@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jne/configs/themes/app_colors.dart';
 import 'package:jne/controllers/home_controller.dart';
 import 'package:jne/models/user.dart';
+import 'package:jne/widgets/card_stack.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,10 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var darkCardWidth = MediaQuery.of(context).size.width - 2 * 8;
+    var darkCardHeight = MediaQuery.of(context).size.height / 3;
     return Scaffold(
+      backgroundColor: kLightBlue,
       body: CustomScrollView(
         slivers: <Widget>[
           const SliverAppBar(
+            backgroundColor: kDarkBlue,
             leading: Icon(Icons.menu),
             actions: [
               Icon(
@@ -37,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 size: 23,
               ),
             ],
-            title: Text("JNE"),
+            title: Text("Hojas de Vida"),
             //pinned: false,
             snap: true,
             floating: true,
@@ -46,63 +52,57 @@ class _HomeScreenState extends State<HomeScreen> {
             //   title: Text('SliverAppBar'),
             // ),
           ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  height: 100,
-                  color: Colors.deepPurpleAccent[700],
-                ),
-              ),
-            ),
-          ),
+          // SliverToBoxAdapter(
+          //   child: CardStack(),
+          // ),
           FutureBuilder(
             future: usuarios,
             builder: (context, snapshot) {
               var childCount = 0;
-              if (snapshot.connectionState != ConnectionState.done) {
-                childCount = 0;
-              } else {
-                childCount = snapshot.data!.length;
-              }
-              return SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
-                    var idHojaVida = snapshot.data![index].idHojaVida.toInt();
 
-                    return Card(
-                      margin: const EdgeInsets.fromLTRB(10, 3, 10, 3),
-                      //color: Colors.black12,
-                      child: ListTile(
-                        leading: CachedNetworkImage(
-                          imageUrl:
-                              "https://declara.jne.gob.pe/Assets/Fotos-HojaVida/$idHojaVida.jpg",
-                          progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                                      value: downloadProgress.progress),
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                        ),
-                        title: Text(snapshot.data![index].nombreCompleto,
-                            style: const TextStyle(color: Colors.blue)),
-                        subtitle: Text(snapshot.data![index]
-                            .organizacionPolitica), //todo set your data from response
-                      ),
-                    );
-                    // return Container(
-                    //   color: index.isOdd ? Colors.white : Colors.black12,
-                    //   height: 100.0,
-                    //   child: Center(
-                    //     child: Text(
-                    //       snapshot.data![index].nombreCompleto,
-                    //     ),
-                    //   ),
-                    // );
-                  },
-                  childCount: childCount,
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData) {
+                //print(snapshot);
+                childCount = snapshot.data!.length;
+                //print("childCount tiene $childCount datos");
+                return SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                      var idHojaVida = snapshot.data![index].idHojaVida.toInt();
+
+                      return CardStack(snapshot.data![index]);
+                      // return Card(
+                      //   elevation: 10,
+                      //   margin: const EdgeInsets.fromLTRB(10, 3, 10, 3),
+                      //   child: ListTile(
+                      //     leading: CachedNetworkImage(
+                      //       imageUrl:
+                      //           "https://declara.jne.gob.pe/Assets/Fotos-HojaVida/$idHojaVida.jpg",
+                      //       progressIndicatorBuilder:
+                      //           (context, url, downloadProgress) =>
+                      //               CircularProgressIndicator(
+                      //                   value: downloadProgress.progress),
+                      //       errorWidget: (context, url, error) =>
+                      //           const Icon(Icons.error),
+                      //     ),
+                      //     title: Text(snapshot.data![index].nombreCompleto,
+                      //         style: const TextStyle(color: Colors.blue)),
+                      //     subtitle:
+                      //         Text(snapshot.data![index].organizacionPolitica),
+                      //   ),
+                      // );
+                    },
+                    childCount: childCount,
+                  ),
+                );
+              }
+              return const SliverToBoxAdapter(
+                child: Center(
+                  child: LinearProgressIndicator(
+                    backgroundColor: Colors.white,
+                    color: Colors.black45,
+                    minHeight: 2,
+                  ),
                 ),
               );
             },

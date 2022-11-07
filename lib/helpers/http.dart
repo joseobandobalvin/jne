@@ -62,6 +62,7 @@ class Http {
         error: null,
       );
     } catch (e, s) {
+      print(e);
       if (e is HttpError) {
         return HttpResult<T>(
           data: null,

@@ -3,10 +3,8 @@ class User {
       nombreCompleto,
       numeroDocumento,
       organizacionPolitica,
-      postulaDepartamento,
-      postulaDistrito,
-      postulaProvincia,
       rutaArchivo;
+  String? postulaDepartamento, postulaDistrito, postulaProvincia;
   final int rowNumber;
   final double idOrganizacionPolitica, numeroCandidato, idHojaVida;
 
@@ -14,9 +12,9 @@ class User {
     required this.estado,
     required this.nombreCompleto,
     required this.organizacionPolitica,
-    required this.postulaDepartamento,
-    required this.postulaDistrito,
-    required this.postulaProvincia,
+    this.postulaDepartamento,
+    this.postulaDistrito,
+    this.postulaProvincia,
     required this.rutaArchivo,
     required this.idHojaVida,
     required this.idOrganizacionPolitica,

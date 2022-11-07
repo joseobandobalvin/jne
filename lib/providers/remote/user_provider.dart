@@ -10,12 +10,12 @@ class UserProvider {
         '/candidato',
         method: HttpMethod.post,
         body: {
-          'pageSize': 20,
+          'pageSize': 40,
           'skip': 1,
-          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': 'juan'}
+          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': 'ala'}
         },
       );
-
+      //print(response.data);
       return response.data;
     } catch (e) {
       return null;

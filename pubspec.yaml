@@ -1,5 +1,5 @@
 name: jne
-description: A new Flutter project.
+description: Proyecto de consulta de candidatos.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -23,7 +23,7 @@ dependencies:
   intl: ^0.17.0
   rive: ^0.9.1
   shared_preferences: ^2.0.15
-  url_launcher: ^6.1.5
+  
 
 dev_dependencies:
 
@@ -52,6 +52,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/ca/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

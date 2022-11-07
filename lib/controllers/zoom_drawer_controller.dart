@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
+//import 'package:url_launcher/url_launcher.dart';
 
 class MyZoomDrawerController extends GetxController {
   final zoomDrawerController = ZoomDrawerController();
@@ -22,7 +22,7 @@ class MyZoomDrawerController extends GetxController {
 
   void website() {
     debugPrint("website pressed");
-    _launch("https://pub.dev/packages?q=launch+url");
+    //_launch("https://pub.dev/packages?q=launch+url");
   }
 
   void signIn() {
@@ -39,12 +39,12 @@ class MyZoomDrawerController extends GetxController {
       path: 'joseobandobalvin@gmail.com',
       queryParameters: {'subject': 'Default Subject', 'body': 'Default body'},
     );
-    _launch(emailLaunchUri.toString());
+    //_launch(emailLaunchUri.toString());
   }
 
-  Future<void> _launch(String url) async {
-    if (!await launch(url)) {
-      throw "could noto launch $url";
-    }
-  }
+  // Future<void> _launch(String url) async {
+  //   if (!await launch(url)) {
+  //     throw "could noto launch $url";
+  //   }
+  // }
 }

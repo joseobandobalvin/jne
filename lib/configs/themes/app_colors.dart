@@ -4,6 +4,8 @@ import 'package:jne/configs/themes/ui_parameters.dart';
 import 'package:flutter/material.dart';
 
 const Color onSurfaceTextColor = Colors.white;
+const Color kLightBlue = Color(0xFF4985FD);
+const Color kDarkBlue = Color(0xFF1046B3);
 
 const mainGradientLight = LinearGradient(
   begin: Alignment.topLeft,

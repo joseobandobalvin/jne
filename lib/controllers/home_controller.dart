@@ -14,7 +14,7 @@ class HomeController extends GetxController {
     final res = await _userProvider.getAllCandidates();
     List<User> usuarios = [];
 
-    if (res["count"] > 0.0) {
+    if (res != null && res["count"] > 0.0) {
       final lista = List.from(res['data']);
       for (var e in lista) {
         final User user = User.fromJson(e);

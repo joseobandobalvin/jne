@@ -16,7 +16,7 @@ class SplashController extends GetxController {
   Future initSplash() async {
     await Future.delayed(const Duration(seconds: 2));
     usuarios = _homeController.getCandidates();
-    print(usuarios);
+    //print(usuarios);
     navigateToHome();
   }
 

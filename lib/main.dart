@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/services.dart';
 import 'package:jne/controllers/theme_controller.dart';
 import 'package:jne/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +15,10 @@ import 'bindings/initial_bindings.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   InitialBindings().dependencies();
+
+  //To fix ---> CERTIFICATE VERIFY FAILED
+  HttpOverrides.global = MyHttpoverrides();
+
   runApp(const MyApp());
 }
 
@@ -32,5 +39,14 @@ class MyApp extends StatelessWidget {
       theme: Get.find<ThemeController>().lightTheme,
       getPages: AppRoutes.routes(),
     );
+  }
+}
+
+class MyHttpoverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
