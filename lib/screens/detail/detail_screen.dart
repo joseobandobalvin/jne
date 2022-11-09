@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jne/configs/themes/app_colors.dart';
+import 'package:jne/controllers/home_controller.dart';
 import 'package:jne/models/cv.dart';
 import 'package:jne/widgets/card_stack_detail.dart';
 import 'package:get/get.dart';
@@ -12,13 +13,23 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  final Cv user = Get.arguments;
+  final Cv cv = Get.arguments;
+  //late Future<List<Cv>> usuarios;
+  final HomeController _homeController = HomeController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    var rr = _homeController.getUserInformation(cv.idHojaVida.toInt());
+  }
+
   @override
   Widget build(BuildContext context) {
-    var idHojaVida = user.idHojaVida.toInt();
+    var idHojaVida = cv.idHojaVida.toInt();
     return Scaffold(
       appBar: AppBar(
-        title: Text(user.nombreCompleto),
+        title: Text(cv.nombreCompleto),
         backgroundColor: kDarkBlue,
       ),
       body: Container(

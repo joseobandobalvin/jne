@@ -21,4 +21,19 @@ class UserProvider {
       return null;
     }
   }
+
+  Future getUserInformation(idHojaVida) async {
+    try {
+      final response = await _http.request(
+        '/candidato/hoja-vida',
+        method: HttpMethod.get,
+        queryParameters: {
+          'IdHojaVida': idHojaVida.toString(),
+        },
+      );
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
 }

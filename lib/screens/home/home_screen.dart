@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late Future<List<Cv>> usuarios;
+  late Future<List<Cv>> cv;
   final HomeController _homeController = HomeController();
 
   //var users = Get.arguments;
@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    usuarios = _homeController.getCandidates();
+    cv = _homeController.getCandidates();
     //print(usuarios);
   }
 
@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // ),
           ),
           FutureBuilder(
-            future: usuarios,
+            future: cv,
             builder: (context, snapshot) {
               var childCount = 0;
 
