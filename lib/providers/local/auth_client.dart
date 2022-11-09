@@ -1,4 +1,4 @@
-import 'package:jne/models/user.dart';
+import 'package:jne/models/cv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const _key = "token";
@@ -29,7 +29,7 @@ class AuthClient {
     await preferences.setString("ruc", data['ruc']);
   }
 
-  Future<User?> get userInformation async {
+  Future<Cv?> get userInformation async {
     final SharedPreferences preferences = await _preferences;
 
     // ignore: unnecessary_null_comparison

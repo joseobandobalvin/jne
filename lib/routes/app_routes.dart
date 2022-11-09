@@ -2,14 +2,18 @@ import 'package:jne/controllers/auth_controller.dart';
 import 'package:jne/controllers/home_controller.dart';
 import 'package:jne/controllers/splash_controller.dart';
 import 'package:jne/controllers/zoom_drawer_controller.dart';
+import 'package:jne/screens/detail/detail_screen.dart';
 import 'package:jne/screens/home/home_screen.dart';
 import 'package:jne/screens/login/login_screen.dart';
 import 'package:get/get.dart';
 import 'package:jne/screens/splash/splash_screen.dart';
 
 class AppRoutes {
-  static const String splashPage = "/";
-  static const String homePage = "/home";
+  static const String splashPage = "/splash";
+  static const String homePage = "/";
+  static const String loginPage = "/login";
+
+  static const String cardDetailPage = "/card-detail";
 
   static List<GetPage> routes() => [
         GetPage(
@@ -21,19 +25,26 @@ class AppRoutes {
         ),
         GetPage(
           name: homePage,
-          page: () => HomeScreen(),
+          page: () => const HomeScreen(),
           binding: BindingsBuilder(() {
-            Get.put(AuthController());
+            //Get.put(AuthController());
             Get.put(HomeController());
-            Get.put(MyZoomDrawerController());
+            //Get.put(MyZoomDrawerController());
           }),
         ),
         GetPage(
-          name: "/login",
+          name: loginPage,
           page: () => const LoginScreen(),
           binding: BindingsBuilder(() {
             Get.put(AuthController());
             Get.put(MyZoomDrawerController());
+          }),
+        ),
+        GetPage(
+          name: cardDetailPage,
+          page: () => DetailScreen(),
+          binding: BindingsBuilder(() {
+            //Get.put(SplashController());
           }),
         ),
       ];

@@ -1,4 +1,4 @@
-class User {
+class Cv {
   final String estado,
       nombreCompleto,
       numeroDocumento,
@@ -8,7 +8,7 @@ class User {
   final int rowNumber;
   final double idOrganizacionPolitica, numeroCandidato, idHojaVida;
 
-  User({
+  Cv({
     required this.estado,
     required this.nombreCompleto,
     required this.organizacionPolitica,
@@ -23,8 +23,8 @@ class User {
     required this.rowNumber,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
+  factory Cv.fromJson(Map<String, dynamic> json) {
+    return Cv(
         estado: json['estado'],
         nombreCompleto: json['nombreCompleto'],
         organizacionPolitica: json['organizacionPolitica'],

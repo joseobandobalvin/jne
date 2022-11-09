@@ -1,4 +1,4 @@
-import 'package:jne/models/user.dart';
+import 'package:jne/models/cv.dart';
 import 'package:jne/providers/local/auth_client.dart';
 import 'package:jne/repo/account_repo.dart';
 import 'package:jne/repo/auth_repo.dart';

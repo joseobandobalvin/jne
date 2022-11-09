@@ -1,6 +1,6 @@
 import 'package:jne/controllers/auth_controller.dart';
 import 'package:jne/generated/l10n.dart';
-import 'package:jne/models/user.dart';
+import 'package:jne/models/cv.dart';
 import 'package:jne/widgets/dialogs.dart';
 import 'package:jne/widgets/global_widgets/input_text.dart';
 import 'package:jne/widgets/rounded_button.dart';

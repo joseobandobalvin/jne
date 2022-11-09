@@ -8,7 +8,7 @@ typedef Parser<T> = T Function(dynamic data);
 class Http {
   final String baseUrl;
 
-  Http({this.baseUrl = "https://apiplataformaelectoral2.jne.gob.pe/api/v1"});
+  Http({this.baseUrl = "https://apiplataformaelectoral8.jne.gob.pe/api/v1"});
 
   Future<HttpResult<T>> request<T>(
     String path, {

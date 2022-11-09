@@ -1,5 +1,5 @@
 import 'package:jne/controllers/theme_controller.dart';
-import 'package:jne/models/user.dart';
+import 'package:jne/models/cv.dart';
 
 import 'package:get/get.dart';
 

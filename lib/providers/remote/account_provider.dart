@@ -1,11 +1,11 @@
-import 'package:jne/models/user.dart';
+import 'package:jne/models/cv.dart';
 import 'package:jne/providers/local/auth_client.dart';
 
 class AccountProvider {
   final AuthClient _authClient = AuthClient();
   //AccountProvider(this._authClient);
 
-  Future<User?> get userInformation async {
+  Future<Cv?> get userInformation async {
     final token = _authClient.token;
 
     // ignore: unnecessary_null_comparison

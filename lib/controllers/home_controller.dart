@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:jne/models/user.dart';
+import 'package:jne/models/cv.dart';
 import 'package:jne/providers/remote/user_provider.dart';
 
 class HomeController extends GetxController {
@@ -10,14 +10,14 @@ class HomeController extends GetxController {
     super.onReady();
   }
 
-  Future<List<User>> getCandidates() async {
+  Future<List<Cv>> getCandidates() async {
     final res = await _userProvider.getAllCandidates();
-    List<User> usuarios = [];
+    List<Cv> usuarios = [];
 
     if (res != null && res["count"] > 0.0) {
       final lista = List.from(res['data']);
       for (var e in lista) {
-        final User user = User.fromJson(e);
+        final Cv user = Cv.fromJson(e);
         usuarios.add(user);
       }
       return usuarios;

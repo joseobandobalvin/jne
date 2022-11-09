@@ -1,5 +1,5 @@
-import 'package:jne/models/user.dart';
+import 'package:jne/models/cv.dart';
 
 abstract class AccountRepo {
-  Future<User?> get userInformation;
+  Future<Cv?> get userInformation;
 }
