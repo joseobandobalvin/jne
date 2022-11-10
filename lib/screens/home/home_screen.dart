@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:jne/configs/themes/app_colors.dart';
 import 'package:jne/controllers/home_controller.dart';
 import 'package:jne/models/cv.dart';
+import 'package:jne/screens/home/widgets/search_form.dart';
 import 'package:jne/widgets/card_stack.dart';
+import 'package:jne/widgets/global_widgets/custom_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -30,18 +32,23 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kLightBlue,
+      drawer: const Drawer(
+        child: CustomDrawer(),
+      ),
       body: CustomScrollView(
         slivers: <Widget>[
-          const SliverAppBar(
+          SliverAppBar(
             backgroundColor: kDarkBlue,
-            leading: Icon(Icons.menu),
-            actions: [
-              Icon(
-                Icons.search_rounded,
-                size: 23,
-              ),
+
+            actions: <Widget>[
+              IconButton(
+                onPressed: () {
+                  Get.to(() => const SearchForm());
+                },
+                icon: const Icon(Icons.search),
+              )
             ],
-            title: Text("Hojas de Vida"),
+            title: const Text("Hojas de Vida"),
             //pinned: false,
             snap: true,
             floating: true,
