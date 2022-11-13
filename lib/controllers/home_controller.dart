@@ -29,6 +29,24 @@ class HomeController extends GetxController {
     return usuarios;
   }
 
+  Future<List<Cv>> getCandidatesByName(query) async {
+    final res = await _userProvider.getAllCandidatesByName(query);
+    List<Cv> usuarios = [];
+
+    //print(res);
+
+    if (res != null && res["count"] > 0.0) {
+      final lista = List.from(res['data']);
+      for (var e in lista) {
+        final Cv user = Cv.fromJson(e);
+        usuarios.add(user);
+      }
+      return usuarios;
+    }
+
+    return usuarios;
+  }
+
   Future getUserInformation(idHojaVida) async {
     final res = await _userProvider.getUserInformation(idHojaVida);
     return res;

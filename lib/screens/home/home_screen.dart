@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:jne/configs/themes/app_colors.dart';
 import 'package:jne/controllers/home_controller.dart';
 import 'package:jne/models/cv.dart';
-import 'package:jne/screens/home/widgets/search_form.dart';
+import 'package:jne/screens/home/search_form.dart';
 import 'package:jne/widgets/card_stack.dart';
 import 'package:jne/widgets/global_widgets/custom_drawer.dart';
 
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    cv = _homeController.getCandidates();
+    cv = _homeController.getCandidatesByName('car');
     //print(usuarios);
   }
 
@@ -42,8 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
             actions: <Widget>[
               IconButton(
-                onPressed: () {
-                  Get.to(() => const SearchForm());
+                onPressed: () async {
+                  //Get.toNamed("/search");
+                  await showSearch(
+                    context: context,
+                    delegate: CustomSearchDelegate(),
+                  );
                 },
                 icon: const Icon(Icons.search),
               )
@@ -52,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
             //pinned: false,
             snap: true,
             floating: true,
-            expandedHeight: 60.0,
+            //expandedHeight: 60.0,
             elevation: 10.0,
             // flexibleSpace: FlexibleSpaceBar(
             //   title: Text('SliverAppBar'),

@@ -1,10 +1,12 @@
 import 'package:jne/controllers/auth_controller.dart';
 import 'package:jne/controllers/home_controller.dart';
 import 'package:jne/controllers/organization_controller.dart';
+import 'package:jne/controllers/search_controller.dart';
 import 'package:jne/controllers/splash_controller.dart';
 import 'package:jne/controllers/zoom_drawer_controller.dart';
 import 'package:jne/screens/detail/detail_screen.dart';
 import 'package:jne/screens/home/home_screen.dart';
+import 'package:jne/screens/home/search_form.dart';
 import 'package:jne/screens/login/login_screen.dart';
 import 'package:get/get.dart';
 import 'package:jne/screens/organization/organization_filter_screen.dart';
@@ -17,6 +19,8 @@ class AppRoutes {
 
   static const String cardDetailPage = "/card-detail";
   static const String organizationFilterPage = "/organization-filter";
+
+  static const String searchPage = "/search";
 
   static List<GetPage> routes() => [
         GetPage(
@@ -57,5 +61,12 @@ class AppRoutes {
             Get.put(OrganizationController());
           }),
         ),
+        // GetPage(
+        //   name: searchPage,
+        //   page: () => const SearchForm(),
+        //   binding: BindingsBuilder(() {
+        //     Get.put(SearchController());
+        //   }),
+        // ),
       ];
 }

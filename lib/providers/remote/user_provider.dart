@@ -12,7 +12,43 @@ class UserProvider {
         body: {
           'pageSize': 10,
           'skip': 1,
-          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': 'ala'}
+          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': 'gam'}
+        },
+      );
+      //print(response.data);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  Future getAllCandidatesByName(query) async {
+    try {
+      final response = await _http.request(
+        '/candidato',
+        method: HttpMethod.post,
+        body: {
+          'pageSize': 20,
+          'skip': 1,
+          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': query}
+        },
+      );
+      //print(response.data);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  Future searchAllCandidates(buscar) async {
+    try {
+      final response = await _http.request(
+        '/candidato',
+        method: HttpMethod.post,
+        body: {
+          'pageSize': 10,
+          'skip': 1,
+          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': buscar}
         },
       );
       //print(response.data);
