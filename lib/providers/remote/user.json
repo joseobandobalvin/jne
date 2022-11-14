@@ -107,6 +107,24 @@
         }
       ],
       "educacionPosgrado": [
+        {
+          "concluidoPosgrado": "SI",
+          "egresadoPosgrado": "SI",
+          "esDoctor": "SI",
+          "esMaestro": null,
+          "fgRegistro": null,
+          "fgRegistroManual": 2,
+          "idEstado": 1,
+          "idHojaVida": 157640,
+          "idHvPosgrado": 140731,
+          "nuItemPosgrado": 1,
+          "tengoPosgrado": "SI",
+          "txAnioPosgrado": "2018",
+          "txCenEstudioPosgrado": "UNIVERSIDAD COMPLUTENSE DE MADRID  ",
+          "txComentario": null,
+          "txEspecialidadPosgrado": "TÍTULO DE DOCTOR DENTRO DEL PROGRAMA DE ECONOMÍA APLICADA A LA INVESTIGACIÓN SOCIOECONONÓMICA ",
+          "txEstado": "ACTIVO (R)"
+        }
         
       ],
       "educacionPosgradoOtro": [
@@ -115,20 +133,33 @@
     },
     "trayectoria": {
       "cargoPartidario": [
-        
+        {
+          "idHvCargoPartidario": 137067,
+          "tengoCargoPartidario": "SI",
+          "itemCargoPartidario": 2,
+          "idOrgPolCargoPartidario": 22,
+          "orgPolCargoPartidario": "RENOVACION POPULAR",
+          "cargoPartidario": "REPRESENTANTE LEGAL",
+          "anioCargoPartiDesde": "2019",
+          "anioCargoPartiHasta": "HASTA LA ACTUALIDAD",
+          "idHojaVida": 145832,
+          "idEstado": 1,
+          "estado": "ACTIVO (R)",
+          "txComentario": "RENOVACIÓN POPULAR (ANTES PARTIDO SOLIDARIDAD NACIONAL)"
+        }        
       ],
       "cargoEleccion": [
         {
-          "idHvcargoEleccion": 137957,
+          "idHvcargoEleccion": 137401,
           "tengoCargoEleccion": "SI",
-          "itemCargoEleccion": 2,
-          "idOrgPolCargoElec": 50,
-          "orgPolCargoElec": "INTEGRANDO UCAYALI",
+          "itemCargoEleccion": 1,
+          "idOrgPolCargoElec": 1251,
+          "orgPolCargoElec": "ALIANZA ELECTORAL UNIDAD NACIONAL",
           "idCargoEleccion": 9,
           "cargoEleccion": "REGIDOR PROVINCIAL",
-          "anioCargoElecDesde": "2011",
-          "anioCargoElecHasta": "2014",
-          "idHojaVida": 231894,
+          "anioCargoElecDesde": "2007",
+          "anioCargoElecHasta": "2010",
+          "idHojaVida": 145832,
           "idEstado": 1,
           "estado": "ACTIVO (R)",
           "txComentario": null

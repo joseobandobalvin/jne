@@ -47,7 +47,7 @@ class HomeController extends GetxController {
 
   Future<User> getUserInformation(idHojaVida) async {
     final res = await _userProvider.getUserInformation(idHojaVida);
-
+    //print(res);
     User user = User.fromJson(res);
 
     return user;

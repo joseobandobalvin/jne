@@ -4,7 +4,7 @@ class Cv {
       numeroDocumento,
       organizacionPolitica,
       rutaArchivo;
-  String? postulaDepartamento, postulaDistrito, postulaProvincia;
+  final String? postulaDepartamento, postulaDistrito, postulaProvincia;
   final int rowNumber;
   final double idOrganizacionPolitica, numeroCandidato, idHojaVida;
 

@@ -1,0 +1,27 @@
+{
+    "pageIndex": 1,
+    "pageSize": 10,
+    "count": 1.0,
+    "messageLog": null,
+    "data": [
+      {
+        "totalRows": 1,
+        "rowNumber": 1,
+        "idHojaVida": 193870.0,
+        "idOrganizacionPolitica": 2278.0,
+        "organizacionPolitica": "MOVIMIENTO INDEPENDIENTE REGIONAL CAMBIO UCAYALINO",
+        "numeroDocumento": "00188009",
+        "nombreCompleto": "MANUEL GAMBINI RUPAY",
+        "cargo": [
+          "GOBERNADOR REGIONAL"
+        ],
+        "numeroCandidato": 0.0,
+        "postulaDepartamento": "UCAYALI",
+        "postulaProvincia": null,
+        "postulaDistrito": null,
+        "rutaArchivo": "/Assets/Fotos-HojaVida/193870.jpg",
+        "estado": "INSCRITO"
+      }
+    ],
+    "totalPages": 1
+  }
