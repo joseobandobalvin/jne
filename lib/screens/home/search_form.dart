@@ -47,12 +47,16 @@ class CustomSearchDelegate extends SearchDelegate {
       future: _search(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return ListView.builder(
-            itemBuilder: (context, index) {
-              return SearchResultList(snapshot.data![index]);
-            },
-            itemCount: snapshot.data!.length,
-          );
+          if (snapshot.data!.isNotEmpty) {
+            return ListView.builder(
+              itemBuilder: (context, index) {
+                return SearchResultList(snapshot.data![index]);
+              },
+              itemCount: snapshot.data!.length,
+            );
+          } else {
+            return const Center(child: Text("Sin resultados"));
+          }
         } else {
           return const Center(
             child: CircularProgressIndicator(),

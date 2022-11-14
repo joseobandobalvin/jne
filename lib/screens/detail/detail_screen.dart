@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:jne/configs/themes/app_colors.dart';
 import 'package:jne/controllers/home_controller.dart';
 import 'package:jne/models/cv.dart';
+import 'package:jne/screens/detail/detail_basic_information.dart';
 import 'package:jne/widgets/card_stack_detail.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +17,7 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   final Cv cv = Get.arguments;
+  late var res;
   //late Future<List<Cv>> usuarios;
   final HomeController _homeController = HomeController();
 
@@ -21,7 +25,7 @@ class _DetailScreenState extends State<DetailScreen> {
   void initState() {
     super.initState();
 
-    var rr = _homeController.getUserInformation(cv.idHojaVida.toInt());
+    res = _homeController.getUserInformation(cv.idHojaVida.toInt());
   }
 
   @override
@@ -32,19 +36,44 @@ class _DetailScreenState extends State<DetailScreen> {
         title: Text(cv.nombreCompleto),
         backgroundColor: kDarkBlue,
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Container(
-              //color: Colors.red,
-              width: double.maxFinite,
-              height: 130,
-              child: Image.network(
-                  "https://declara.jne.gob.pe/Assets/Fotos-HojaVida/$idHojaVida.jpg"),
-            ),
-            const Divider(),
-          ],
-        ),
+      body: Column(
+        children: [
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                //width: double.maxFinite,
+                width: 130,
+                height: 130,
+                child: Image.network(
+                    "https://declara.jne.gob.pe/Assets/Fotos-HojaVida/$idHojaVida.jpg"),
+              ),
+              Expanded(
+                child: FutureBuilder(
+                  future: res,
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      var gg = snapshot.data;
+                      print(gg);
+
+                      //print("childCount tiene $childCount datos");
+                      return DetailBasicInformation();
+                    }
+                    return const Center(
+                      child: LinearProgressIndicator(
+                        backgroundColor: Colors.white,
+                        color: Colors.black45,
+                        minHeight: 2,
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+          const Divider(),
+        ],
       ),
     );
   }

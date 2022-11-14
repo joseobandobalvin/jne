@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               var childCount = 0;
 
               if (snapshot.connectionState == ConnectionState.done &&
-                  snapshot.hasData) {
+                  snapshot.data!.isNotEmpty) {
                 //print(snapshot);
                 childCount = snapshot.data!.length;
                 //print("childCount tiene $childCount datos");

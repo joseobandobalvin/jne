@@ -33,8 +33,6 @@ class HomeController extends GetxController {
     final res = await _userProvider.getAllCandidatesByName(query);
     List<Cv> usuarios = [];
 
-    //print(res);
-
     if (res != null && res["count"] > 0.0) {
       final lista = List.from(res['data']);
       for (var e in lista) {
@@ -49,6 +47,7 @@ class HomeController extends GetxController {
 
   Future getUserInformation(idHojaVida) async {
     final res = await _userProvider.getUserInformation(idHojaVida);
+
     return res;
     // List<User> usuarios = [];
 
