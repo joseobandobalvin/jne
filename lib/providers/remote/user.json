@@ -1,0 +1,280 @@
+{
+    "datoGeneral": {
+      "idHojaVida": 231894.0,
+      "idProcesoElectoral": 113.0,
+      "idTipoEleccion": 4.0,
+      "carneExtranjeria": null,
+      "numeroDocumento": "00162917",
+      "nombres": "PRUHL",
+      "apellidoPaterno": "DE PINHO",
+      "apellidoMaterno": "RIOS",
+      "sexo": "1",
+      "feNacimiento": "25/01/1974",
+      "paisNacimiento": "PERÚ",
+      "ubigeoNacimiento": "250301",
+      "naciDepartamento": "UCAYALI",
+      "naciProvincia": "ATALAYA",
+      "naciDistrito": "RAIMONDI",
+      "ubigeoDomicilio": "250301",
+      "domiDepartamento": "UCAYALI",
+      "domiProvincia": "ATALAYA",
+      "domiDistrito": "RAIMONDI",
+      "domicilioDirecc": "JR.AMAZONAS S/N",
+      "ubigeoPostula": "250000",
+      "postulaDepartamento": "UCAYALI",
+      "postulaProvincia": " ",
+      "postulaDistrito": " ",
+      "rutaArchivo": "/Assets/Fotos-HojaVida/231894.jpg",
+      "estado": "INSCRITO",
+      "idOrganizacionPolitica": 4.0,
+      "organizacionPolitica": "ACCION POPULAR",
+      "numeroCandidato": 1.0,
+      "cargo": [
+        "CONSEJERO REGIONAL"
+      ],
+      "txFeTerminoRegistro": "14/06/2022 08:34:55",
+      "txGuidFormatoHojaVida": "e864a665-741b-4289-a7f3-ab666a695f2f",
+      "idSolicitudLista": 35366.0,
+      "txComentario": "PROVINCIA DE ATALAYA"
+    },
+    "experienciaLaboral": [
+      {
+        "idHvExpeLaboral": 172939,
+        "tengoExpeLaboral": "1",
+        "itemExpeLaboral": 1,
+        "centroTrabajo": "REPRESENTACIÓN TITANIO S.A.C.",
+        "ocupacionProfesion": "GERENTE GENERAL",
+        "rucTrabajo": "20394065511",
+        "direccionTrabajo": "JR TENIENTE MEJIA MZ 46B LT 02",
+        "anioTrabajoDesde": "2014",
+        "anioTrabajoHasta": "0000",
+        "ubigeoTrabajo": "250301",
+        "trabajoPais": "PERÚ",
+        "trabajoDepartamento": "UCAYALI",
+        "trabajoProvincia": "ATALAYA",
+        "trabajoDistrito": "RAIMONDI",
+        "idHojaVida": 231894,
+        "idEstado": 1,
+        "estado": "ACTIVO (R)",
+        "txComentario": null
+      }
+    ],
+    "formacionAcademica": {
+      "educacionBasica": {
+        "idHvEduBasica": 151940,
+        "tengoEduBasica": "SI",
+        "eduPrimaria": "SI",
+        "concluidoEduPrimaria": "SI",
+        "eduSecundaria": "SI",
+        "concluidoEduSecundaria": "SI",
+        "idHojaVida": 231894,
+        "idEstado": 1,
+        "estado": "ACTIVO (R)"
+      },
+      "educacionTecnico": [
+        {
+          "idHvEduTecnico": 138443,
+          "tengoEduTecnico": "SI",
+          "cenEstudioTecnico": "INSTITUTO IDAT",
+          "carreraTecnico": "PROTESIS DENTAL",
+          "concluidoEduTecnico": "1",
+          "idHojaVida": 231894,
+          "idEstado": 1,
+          "estado": "ACTIVO (R)",
+          "txComentario": null
+        }
+      ],
+      "educacionNoUniversitaria": [
+        
+      ],
+      "educacionUniversitaria": [
+        {
+          "idHvEduUniversitaria": 150504,
+          "tengoEduUniversitaria": "SI",
+          "itemEduUni": "1",
+          "eduUniversitaria": "1",
+          "universidad": "UNIVERSIDAD PERUANA LOS ANDES",
+          "carreraUni": "PREGRADO",
+          "concluidoEduUni": "NO",
+          "egresadoEduUni": "NO",
+          "bachillerEduUni": null,
+          "anioBachiller": null,
+          "tituloUni": null,
+          "anioTitulo": null,
+          "idEstado": 1,
+          "estado": "ACTIVO (R)",
+          "txComentario": "CARRERA PROFESIONAL DE ODONTOLOGIA"
+        }
+      ],
+      "educacionPosgrado": [
+        
+      ],
+      "educacionPosgradoOtro": [
+        
+      ]
+    },
+    "trayectoria": {
+      "cargoPartidario": [
+        
+      ],
+      "cargoEleccion": [
+        {
+          "idHvcargoEleccion": 137957,
+          "tengoCargoEleccion": "SI",
+          "itemCargoEleccion": 2,
+          "idOrgPolCargoElec": 50,
+          "orgPolCargoElec": "INTEGRANDO UCAYALI",
+          "idCargoEleccion": 9,
+          "cargoEleccion": "REGIDOR PROVINCIAL",
+          "anioCargoElecDesde": "2011",
+          "anioCargoElecHasta": "2014",
+          "idHojaVida": 231894,
+          "idEstado": 1,
+          "estado": "ACTIVO (R)",
+          "txComentario": null
+        },
+        {
+          "idHvcargoEleccion": 137958,
+          "tengoCargoEleccion": "SI",
+          "itemCargoEleccion": 1,
+          "idOrgPolCargoElec": 233,
+          "orgPolCargoElec": "UCAYALI REGION CON FUTURO",
+          "idCargoEleccion": 9,
+          "cargoEleccion": "REGIDOR PROVINCIAL",
+          "anioCargoElecDesde": "2007",
+          "anioCargoElecHasta": "2010",
+          "idHojaVida": 231894,
+          "idEstado": 1,
+          "estado": "ACTIVO (R)",
+          "txComentario": null
+        }
+      ]
+    },
+    "renunciaEfectuada": [
+      {
+        "idHvRenunciaOp": 141803,
+        "tengoRenunciaOp": "SI",
+        "itemRenunciaop": 1,
+        "idOrgPolRenunciaOp": 15,
+        "orgPolRenunciaOp": "PARTIDO POPULAR CRISTIANO - PPC",
+        "anioRenunciaOp": "2010",
+        "idHojaVida": 231894,
+        "idEstado": 1,
+        "txComentario": null
+      }
+    ],
+    "informacionAdicional": [
+      {
+        "idHvInfoAdicional": 147275,
+        "idTengoInfoAdicional": "1",
+        "tengoInfoAdicional": "SI",
+        "infoAdicional": "MIS INGRESOS DEL 2021 SON REFERENTE A LA EMPRESA  REPRESENTACIONES TITANIO SAC CON NUMERO DE PARTIDA 11112044",
+        "idHojaVida": 231894,
+        "idEstado": 1
+      }
+    ],
+    "declaracionJurada": {
+      "ingreso": [
+        {
+          "idHvIngresos": 147854,
+          "idTengoIngresos": "1",
+          "tengoIngresos": "SI",
+          "anioIngresos": "2021",
+          "remuBrutaPublico": 0.0,
+          "remuBrutaPrivado": 11160.0,
+          "rentaIndividualPublico": 0.0,
+          "rentaIndividualPrivado": 36000.0,
+          "otroIngresoPublico": 0.0,
+          "otroIngresoPrivado": 0.0,
+          "idHojaVida": 231894,
+          "idEstado": 1,
+          "totalIngresos": 47160.0
+        }
+      ],
+      "bienInmueble": [
+        {
+          "idHvBienInmueble": 186221,
+          "idTengoinmueble": "1",
+          "tengoInmueble": "SI",
+          "itemInmueble": 1,
+          "tipoBienInmueble": "REGISTRO DE PREDIOS",
+          "ubigeoInmueble": null,
+          "inmueblePais": null,
+          "inmuebleDepartamento": null,
+          "inmuebleProvincia": null,
+          "inmuebleDistrito": null,
+          "inmuebleDireccion": "ATALAYA-RAYMONDI- MZ 46C LOTE 11 - CENTRO POBLADO VILLA  ATALAYA PASCUAL ALEGRE",
+          "comentario": null,
+          "inmuebleSunarp": "1",
+          "inmuebleSunarpDesc": "SI",
+          "partidaSunarp": "11138703",
+          "fichaTomoSunarp": null,
+          "autovaluo": 120000.0,
+          "idHojaVida": 231894,
+          "idEstado": 1,
+          "flValor": "500000"
+        }
+      ],
+      "bienMueble": [
+        {
+          "idHvBienMueble": 159239,
+          "idTengoBienMueble": "1",
+          "tengoBienMueble": "SI",
+          "itemMueble": 2,
+          "vehiculo": "REGISTRO DE PROPIEDAD VEHICULAR",
+          "marca": null,
+          "placa": "8371DU ",
+          "valor": 2000.0,
+          "modelo": null,
+          "anio": null,
+          "caracteristica": "MOTOKAR HONDA  CCG 125",
+          "comentario": "AÑO 2021\nCOLOR ROJO PLATA",
+          "idHojaVida": 231894,
+          "idEstado": 1
+        },
+        {
+          "idHvBienMueble": 159238,
+          "idTengoBienMueble": "1",
+          "tengoBienMueble": "SI",
+          "itemMueble": 1,
+          "vehiculo": "REGISTRO DE PROPIEDAD VEHICULAR",
+          "marca": null,
+          "placa": "47592U ",
+          "valor": 2700.0,
+          "modelo": null,
+          "anio": null,
+          "caracteristica": "MOTOCICLETA  MARCA LIFAN LF125-2C",
+          "comentario": "COLOR NEGRO",
+          "idHojaVida": 231894,
+          "idEstado": 1
+        }
+      ],
+      "otroMueble": [
+        
+      ],
+      "titularidad": [
+        {
+          "idHVTitularidad": 1472,
+          "tengoTitularidad": "SI",
+          "nuItemTitularidad": 1,
+          "txPersonaJuridica": "REPRESENTACIONES TITANIO S.A.C",
+          "idParamTipoTitularidad": 87,
+          "txTipoTitularidad": "ACCIONES",
+          "flCantidad": 5100.0,
+          "flValor": 10.0,
+          "idHojaVida": 231894,
+          "idEstado": 1,
+          "txUsuario": "40610960",
+          "txFechaRegistro": null,
+          "txComentario": null,
+          "txRegistroManual": null
+        }
+      ]
+    },
+    "sentenciaPenal": [
+      
+    ],
+    "sentenciaObliga": [
+      
+    ]
+  }
