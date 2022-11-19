@@ -10,7 +10,7 @@ class UserProvider {
         '/candidato',
         method: HttpMethod.post,
         body: {
-          'pageSize': 10,
+          'pageSize': 1,
           'skip': 1,
           'filter': {'idProcesoElectoral': 113, 'numeroDocumento': 'gam'}
         },

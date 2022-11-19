@@ -15,7 +15,7 @@ class CardStack extends StatelessWidget {
     var darkCardWidth = MediaQuery.of(context).size.width - 2 * 8;
     var idHojaVida = usuario.idHojaVida.toInt();
     return GestureDetector(
-      onTap: () => Get.to(() => DetailScreen(), arguments: usuario),
+      onTap: () => Get.to(() => const DetailScreen(), arguments: usuario),
       child: Center(
         //padding: const EdgeInsets.all(2.0),
         child: Stack(
@@ -50,8 +50,9 @@ class CardStack extends StatelessWidget {
                                   "https://declara.jne.gob.pe/Assets/Fotos-HojaVida/$idHojaVida.jpg",
                               progressIndicatorBuilder:
                                   (context, url, downloadProgress) =>
-                                      CircularProgressIndicator(
-                                          value: downloadProgress.progress),
+                                      LinearProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
                               errorWidget: (context, url, error) =>
                                   const Icon(Icons.error),
                             ),

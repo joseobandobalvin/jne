@@ -24,8 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    cv = _homeController.getCandidatesByName('car');
-    //print(usuarios);
+    cv = _homeController.getCandidates();
+    //cv = [];
   }
 
   @override

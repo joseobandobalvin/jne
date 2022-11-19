@@ -18,7 +18,7 @@ class SearchResultList extends StatelessWidget {
         imageUrl:
             "https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo/$idOrgPol",
         progressIndicatorBuilder: (context, url, downloadProgress) =>
-            CircularProgressIndicator(value: downloadProgress.progress),
+            LinearProgressIndicator(value: downloadProgress.progress),
         errorWidget: (context, url, error) => const Icon(Icons.error),
       ),
       title: Text(
