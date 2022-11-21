@@ -16,27 +16,19 @@ class DetailBasicInformation extends StatelessWidget {
         color: kDarkBlue,
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         alignment: Alignment.centerLeft,
-        child: const Text(
-          'Información básica',
-          style: TextStyle(color: Colors.white),
+        child: Row(
+          children: const [
+            Icon(Icons.info_outline),
+            Text(
+              ' Información basica',
+              style: TextStyle(color: Colors.white),
+            )
+          ],
         ),
       ),
       sliver: SliverToBoxAdapter(
         child: Column(
           children: [
-            // Container(
-            //   padding: const EdgeInsets.all(10),
-            //   margin: const EdgeInsets.only(bottom: 4, top: 4),
-            //   color: Colors.red,
-            //   width: double.maxFinite,
-            //   child: const Text(
-            //     textAlign: TextAlign.left,
-            //     "INFORMACIÓN BÁSICA",
-            //     style: TextStyle(
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            // ),
             Info(generalData),
             BirthPlace(generalData),
             Address(generalData),
@@ -44,15 +36,6 @@ class DetailBasicInformation extends StatelessWidget {
         ),
       ),
     );
-    // return Container(
-    //   child: Column(
-    //     children: [
-    //       Info(generalData),
-    //       BirthPlace(generalData),
-    //       Address(generalData),
-    //     ],
-    //   ),
-    // );
   }
 }
 

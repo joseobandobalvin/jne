@@ -6,7 +6,10 @@ import 'package:jne/models/user.dart';
 import 'package:jne/screens/detail/detail_information.dart';
 
 import 'package:get/get.dart';
+import 'package:jne/screens/detail/widgets/detail_academic_formation.dart';
 import 'package:jne/screens/detail/widgets/detail_basic_information.dart';
+import 'package:jne/screens/detail/widgets/detail_sworn_declaration.dart';
+import 'package:jne/screens/detail/widgets/detail_trajectory.dart';
 import 'package:jne/screens/detail/widgets/detail_work_experience.dart';
 import 'package:jne/screens/detail/widgets/tabs.dart';
 import 'package:sliver_tools/sliver_tools.dart';
@@ -93,8 +96,10 @@ class _DetailScreenState extends State<DetailScreen> {
                   children: [
                     //DetailInformation(snapshot.data!),
                     DetailBasicInformation(snapshot.data!.datoGeneral),
-
-                    DetailWorkExperience(),
+                    DetailWorkExperience(snapshot.data!.experienciaLaboral),
+                    DetailAcademicFormation(snapshot.data!.formacionAcademica),
+                    DetailTrajectory(snapshot.data!.trayectoria),
+                    DetailSwornDeclaration(snapshot.data!.declaracionJurada),
                   ],
                 );
                 //return DetailInformation(snapshot.data!);

@@ -1,5 +1,7 @@
 import 'package:jne/models/academic_formation.dart';
 import 'package:jne/models/general_data.dart';
+import 'package:jne/models/income.dart';
+import 'package:jne/models/sworn_declaration.dart';
 import 'package:jne/models/trajectory.dart';
 import 'package:jne/models/work_experience.dart';
 
@@ -8,12 +10,14 @@ class User {
   final List<WorkExperience> experienciaLaboral;
   final AcademicFormation formacionAcademica;
   final Trajectory trayectoria;
+  final SwornDeclaration declaracionJurada;
 
   User({
     required this.datoGeneral,
     required this.experienciaLaboral,
     required this.formacionAcademica,
     required this.trayectoria,
+    required this.declaracionJurada,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -28,6 +32,7 @@ class User {
       formacionAcademica:
           AcademicFormation.fromJson(json["formacionAcademica"]),
       trayectoria: Trajectory.fromJson(json["trayectoria"]),
+      declaracionJurada: SwornDeclaration.fromJson(json["declaracionJurada"]),
     );
   }
 }

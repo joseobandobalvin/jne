@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:jne/configs/themes/app_colors.dart';
+import 'package:jne/models/work_experience.dart';
+import 'package:jne/screens/detail/widgets/card_work_experience.dart';
 
 class DetailWorkExperience extends StatelessWidget {
-  const DetailWorkExperience({super.key});
+  final List<WorkExperience> listWork;
+  const DetailWorkExperience(this.listWork, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,22 +16,31 @@ class DetailWorkExperience extends StatelessWidget {
         color: kDarkBlue,
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         alignment: Alignment.centerLeft,
-        child: const Text(
-          'Experiencia laboral',
-          style: TextStyle(color: Colors.white),
+        child: Row(
+          children: [
+            const Icon(Icons.work_history_outlined),
+            Text(
+              ' Experiencia laboral (${listWork.length})',
+              style: const TextStyle(color: Colors.white),
+            )
+          ],
         ),
       ),
-      sliver: SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (context, i) => ListTile(
-            leading: const CircleAvatar(
-              child: Text('0'),
+      sliver: listWork.isNotEmpty
+          ? SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return CardWorkExperience(listWork[index]);
+                },
+                childCount: listWork.length,
+              ),
+            )
+          : SliverToBoxAdapter(
+              child: Container(
+                margin: const EdgeInsets.all(10.0),
+                child: const Text("No registra experiencia laboral"),
+              ),
             ),
-            title: Text('List tile #$i'),
-          ),
-          childCount: 20,
-        ),
-      ),
     );
   }
 }
