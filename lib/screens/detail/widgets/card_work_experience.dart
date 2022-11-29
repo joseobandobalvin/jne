@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jne/configs/themes/app_colors.dart';
 import 'package:jne/models/work_experience.dart';
 
 class CardWorkExperience extends StatelessWidget {
@@ -8,7 +9,9 @@ class CardWorkExperience extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.lightGreen,
+      decoration: BoxDecoration(
+        border: Border.all(),
+      ),
       padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.all(4.0),
       child: Column(
@@ -33,33 +36,16 @@ class CardWorkExperience extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Row(
-            children: [
-              Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Container(
-                  color: Colors.blueAccent,
-                  child: Text("${workExperience.trabajoDepartamento}"),
-                ),
-              ),
-              Flexible(
-                flex: 1,
-                fit: FlexFit.tight,
-                child: Container(
-                  color: Colors.yellow,
-                  child: Text("${workExperience.trabajoProvincia}"),
-                ),
-              ),
-              Flexible(
-                flex: 2,
-                fit: FlexFit.tight,
-                child: Container(
-                  color: Colors.red,
-                  child: Text("${workExperience.trabajoDistrito}"),
-                ),
-              ),
-            ],
+          const SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            "${workExperience.trabajoDepartamento} / ${workExperience.trabajoProvincia} / ${workExperience.trabajoDistrito}",
+            textAlign: TextAlign.left,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              color: kDarkBlue,
+            ),
           ),
         ],
       ),

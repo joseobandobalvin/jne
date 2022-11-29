@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:jne/configs/themes/app_colors.dart';
 import 'package:jne/models/income.dart';
+import 'package:jne/models/ownership.dart';
 import 'package:jne/models/sworn_declaration.dart';
 
 class DetailSwornDeclaration extends StatelessWidget {
@@ -18,7 +19,7 @@ class DetailSwornDeclaration extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Row(
           children: const [
-            Icon(Icons.groups_outlined),
+            Icon(Icons.article_outlined),
             Text(
               ' Declaración jurada ',
               style: TextStyle(color: Colors.white),
@@ -44,13 +45,13 @@ class DetailSwornDeclaration extends StatelessWidget {
               color: Colors.teal,
               child: const Center(
                   child: Text(
-                "BIEN INMUEBLE",
+                "TITULARIDAD DE ACCIONES",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               )),
             ),
-            //ElectionPos(trajectory.cargoEleccion),
+            Ownerships(swornDeclaration.titularidad),
           ],
         ),
       ),
@@ -73,10 +74,10 @@ class Incomes extends StatelessWidget {
                 itemCount: data.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    //height: 100,
-                    width: 300,
-
-                    color: Colors.lightGreenAccent,
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                    ),
+                    width: 370,
                     padding: const EdgeInsets.all(10.0),
                     margin: const EdgeInsets.all(4.0),
                     child: Column(
@@ -254,6 +255,95 @@ class Incomes extends StatelessWidget {
         : Container(
             margin: const EdgeInsets.all(10.0),
             child: const Text("No registra ingresos"),
+          );
+  }
+}
+
+class Ownerships extends StatelessWidget {
+  final List<Ownership> data;
+  const Ownerships(this.data, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return data.isNotEmpty
+        ? SizedBox(
+            height: 140,
+            child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemCount: data.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                    ),
+                    width: 370,
+                    padding: const EdgeInsets.all(10.0),
+                    margin: const EdgeInsets.all(4.0),
+                    child: Column(
+                      children: [
+                        Expanded(
+                            child: Column(
+                          children: [
+                            Text(
+                              "${data[index].txPersonaJuridica}",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              "Tipo : ${data[index].txTipoTitularidad}",
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        )),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Text("CANTIDAD"),
+                                  Text(
+                                    "${data[index].flCantidad}",
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Text("VALOR"),
+                                  Text(
+                                    "${data[index].flValor}",
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+          )
+        : Container(
+            margin: const EdgeInsets.all(10.0),
+            child: const Text("No registra Titularidad de Acciones"),
           );
   }
 }

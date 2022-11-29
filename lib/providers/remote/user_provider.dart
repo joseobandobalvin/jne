@@ -10,9 +10,9 @@ class UserProvider {
         '/candidato',
         method: HttpMethod.post,
         body: {
-          'pageSize': 1,
+          'pageSize': 0,
           'skip': 1,
-          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': 'gam'}
+          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': 'loa'}
         },
       );
       //print(response.data);
@@ -23,21 +23,24 @@ class UserProvider {
   }
 
   Future getAllCandidatesByName(query) async {
-    try {
-      final response = await _http.request(
-        '/candidato',
-        method: HttpMethod.post,
-        body: {
-          'pageSize': 20,
-          'skip': 1,
-          'filter': {'idProcesoElectoral': 113, 'numeroDocumento': query}
-        },
-      );
-      //print(response.data);
-      return response.data;
-    } catch (e) {
-      return null;
+    if (query.toString().trim().isNotEmpty) {
+      try {
+        final response = await _http.request(
+          '/candidato',
+          method: HttpMethod.post,
+          body: {
+            'pageSize': 20,
+            'skip': 1,
+            'filter': {'idProcesoElectoral': 113, 'numeroDocumento': query}
+          },
+        );
+        //print(response.data);
+        return response.data;
+      } catch (e) {
+        return null;
+      }
     }
+    return null;
   }
 
   Future searchAllCandidates(buscar) async {

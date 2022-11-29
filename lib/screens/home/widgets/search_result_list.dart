@@ -37,7 +37,7 @@ class SearchResultList extends StatelessWidget {
           fontSize: 10,
         ),
       ),
-      onTap: () => Get.to(() => DetailScreen(), arguments: usuario),
+      onTap: () => Get.to(() => const DetailScreen(), arguments: usuario),
     );
   }
 }

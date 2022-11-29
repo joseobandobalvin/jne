@@ -101,25 +101,20 @@ class BirthPlace extends StatelessWidget {
       width: double.maxFinite,
       child: Column(
         children: [
-          Text("Lugar de Nacimiento"),
-          Text("Pais:"),
+          const Text(
+            "LUGAR DE NACIMIENTO",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+          ),
+          Text("Pais"),
           Text(
             data.paisNacimiento,
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
-          Text("Departamento:"),
           Text(
-            data.naciDepartamento,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Text("Provincia:"),
-          Text(
-            data.naciProvincia,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Text("Distrito:"),
-          Text(
-            data.naciDistrito,
+            "${data.naciDepartamento} - ${data.naciProvincia} - ${data.naciDistrito}",
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ],
@@ -139,23 +134,19 @@ class Address extends StatelessWidget {
       width: double.maxFinite,
       child: Column(
         children: [
-          Text("Lugar de Domicilio"),
-          Text("Departamento:"),
+          const Text(
+            "LUGAR DE DOMICILIO",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+          ),
+          const Text("Departamento"),
           Text(
-            data.domiDepartamento,
+            "${data.naciDepartamento} - ${data.naciProvincia} - ${data.naciDistrito}",
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
-          Text("Provincia:"),
-          Text(
-            data.domiProvincia,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Text("Distrito:"),
-          Text(
-            data.domiProvincia,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Text("Dirección:"),
+          const Text("Dirección:"),
           Text(
             data.domicilioDirecc,
             style: const TextStyle(fontWeight: FontWeight.bold),

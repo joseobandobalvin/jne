@@ -80,41 +80,74 @@ class Basic extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(4.0),
       width: double.maxFinite,
-      color: Colors.lightBlueAccent,
       child: Column(
         children: [
-          const Text("¿CUENTA CON ESTUDIOS PRIMARIOS?"),
-          Text(
-            textAlign: TextAlign.justify,
-            "${data.eduPrimaria}",
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    const Text("¿ESTUDIOS PRIMARIOS?"),
+                    Text(
+                      "${data.eduPrimaria}",
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  children: [
+                    const Text("¿PRIMARIOS CONCLUIDOS?"),
+                    Text(
+                      "${data.concluidoEduPrimaria}",
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
-          const Text("¿ESTUDIOS PRIMARIOS CONCLUIDOS?"),
-          Text(
-            textAlign: TextAlign.justify,
-            "${data.concluidoEduPrimaria}",
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Text("¿CUENTA CON ESTUDIOS SECUNDARIOS?"),
-          Text(
-            textAlign: TextAlign.justify,
-            "${data.eduSecundaria}",
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Text("¿ESTUDIOS SECUNDARIOS CONCLUIDOS?"),
-          Text(
-            textAlign: TextAlign.justify,
-            "${data.concluidoEduSecundaria}",
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+          Divider(),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    const Text("¿ESTUDIOS SECUNDARIOS?"),
+                    Text(
+                      "${data.eduSecundaria}",
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  children: [
+                    const Text("¿SECUNDARIOS CONCLUIDOS?"),
+                    Text(
+                      "${data.concluidoEduSecundaria}",
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
         ],
       ),
@@ -136,7 +169,63 @@ class Technical extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: data.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ListTile(title: Text("${data[index].carreraTecnico}"));
+                  return Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                    ),
+                    width: 370,
+                    padding: const EdgeInsets.all(10.0),
+                    margin: const EdgeInsets.all(4.0),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Text(
+                                "${data[index].cenEstudioTecnico}",
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                "${data[index].carreraTecnico}",
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                "${data[index].estado}",
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Text("CONCLUIDOS"),
+                                  Text(
+                                    "${data[index].concluidoEduTecnico}",
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
                 }),
           )
         : Container(
@@ -158,44 +247,44 @@ class University extends StatelessWidget {
             child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                //shrinkWrap: true,
                 itemCount: data.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    //height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                    ),
                     width: 370,
-                    //width: double.maxFinite,
-                    color: Colors.yellow,
                     padding: const EdgeInsets.all(10.0),
                     margin: const EdgeInsets.all(4.0),
                     child: Column(
                       children: [
                         Expanded(
-                            child: Column(
-                          children: [
-                            Text(
-                              "${data[index].universidad}",
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              "${data[index].carreraUni}",
-                              style: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                          child: Column(
+                            children: [
+                              Text(
+                                "${data[index].universidad}",
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                            Text(
-                              "Año : ${data[index].anioBachiller}",
-                              style: const TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
+                              Text(
+                                "${data[index].carreraUni}",
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                            ),
-                          ],
-                        )),
+                              Text(
+                                "Año : ${data[index].anioBachiller}",
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         Row(
                           children: [
                             Expanded(

@@ -11,6 +11,8 @@ import 'package:jne/widgets/card_stack.dart';
 class CustomSearchDelegate extends SearchDelegate {
   final HomeController _homeController = HomeController();
 
+  //PreferredSizeWidget? buildBottom(BuildContext context) => ver();
+
   Future<List<Cv>> _search() async {
     var cv = _homeController.getCandidatesByName(query);
     return cv;
@@ -21,10 +23,27 @@ class CustomSearchDelegate extends SearchDelegate {
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
-        onPressed: () {
-          query = '';
-        },
+        onPressed: () => query = '',
         icon: const Icon(Icons.clear),
+      ),
+      IconButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: const Text("Filtrar por:"),
+              content: Container(
+                width: double.infinity,
+                color: Colors.amber,
+                child: Text("This is my message."),
+              ),
+              actions: [
+                okButton,
+              ],
+            ),
+          );
+        },
+        icon: const Icon(Icons.more_vert),
       ),
     ];
   }
@@ -74,4 +93,21 @@ class CustomSearchDelegate extends SearchDelegate {
         //color: kLightBlue,
         );
   }
+
+  ver() {
+    return PreferredSize(
+      preferredSize: Size(double.infinity, 70),
+      child: Container(
+        height: 40,
+        width: double.infinity,
+        color: kDarkBlue,
+        child: Text("Hola mola"),
+      ),
+    );
+  }
+
+  Widget okButton = TextButton(
+    child: Text("OK"),
+    onPressed: () {},
+  );
 }
