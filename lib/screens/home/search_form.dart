@@ -35,7 +35,7 @@ class CustomSearchDelegate extends SearchDelegate {
               content: Container(
                 width: double.infinity,
                 color: Colors.amber,
-                child: Text("This is my message."),
+                child: Text("Mensage."),
               ),
               actions: [
                 okButton,
