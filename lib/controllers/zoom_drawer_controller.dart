@@ -2,7 +2,6 @@ import 'package:jne/controllers/auth_controller.dart';
 import 'package:jne/providers/local/auth_client.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
 //import 'package:url_launcher/url_launcher.dart';
 

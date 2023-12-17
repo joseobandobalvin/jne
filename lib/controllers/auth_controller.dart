@@ -1,11 +1,7 @@
-import 'package:jne/models/cv.dart';
 import 'package:jne/providers/local/auth_client.dart';
-import 'package:jne/repo/account_repo.dart';
-import 'package:jne/repo/auth_repo.dart';
-import 'package:jne/repo_imp/account_repo_imp.dart';
+
 import 'package:jne/repo_imp/auth_repo_imp.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class AuthController extends GetxController {
   String _email = "", _password = "";

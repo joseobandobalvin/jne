@@ -38,10 +38,15 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "baseUrl":
             MessageLookupByLibrary.simpleMessage("https://full.facturalo.pro"),
-        "ingresar": MessageLookupByLibrary.simpleMessage("Sign in"),
         "pageHomeWelcome": m0,
         "pageHomeWelcomeGender": m1,
         "pageHomeWelcomeRole": m2,
-        "pageNotificationsCount": m3
+        "pageNotificationsCount": m3,
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "txtFilterBy": MessageLookupByLibrary.simpleMessage("Filter by :"),
+        "urlPhotoResume": MessageLookupByLibrary.simpleMessage(
+            "https://declara.jne.gob.pe/Assets/Fotos-HojaVida"),
+        "urlPoliticalGroupSymbol": MessageLookupByLibrary.simpleMessage(
+            "https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo")
       };
 }

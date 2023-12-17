@@ -1,7 +1,4 @@
 import 'package:get/get.dart';
-import 'package:jne/controllers/home_controller.dart';
-import 'package:jne/models/cv.dart';
-import 'package:jne/providers/remote/user_provider.dart';
 
 class SplashController extends GetxController {
   //HomeController _homeController = HomeController();

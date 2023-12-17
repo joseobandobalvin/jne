@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jne/generated/l10n.dart';
 import 'package:jne/models/cv.dart';
 import 'package:jne/screens/detail/detail_screen.dart';
+import 'package:jne/screens/detail/detail_screen_ex.dart';
 
 class SearchResultList extends StatelessWidget {
   final Cv usuario;
@@ -15,8 +17,7 @@ class SearchResultList extends StatelessWidget {
       leading: CachedNetworkImage(
         width: 47,
         height: 47,
-        imageUrl:
-            "https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo/$idOrgPol",
+        imageUrl: "${S.current.urlPoliticalGroupSymbol}/$idOrgPol",
         progressIndicatorBuilder: (context, url, downloadProgress) =>
             LinearProgressIndicator(value: downloadProgress.progress),
         errorWidget: (context, url, error) => const Icon(Icons.error),
@@ -37,7 +38,7 @@ class SearchResultList extends StatelessWidget {
           fontSize: 10,
         ),
       ),
-      onTap: () => Get.to(() => const DetailScreen(), arguments: usuario),
+      onTap: () => Get.to(() => DetailScreenEx(), arguments: usuario),
     );
   }
 }

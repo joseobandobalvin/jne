@@ -1,6 +1,9 @@
 {
 "baseUrl":"https://full.facturalo.pro",
-"ingresar": "Ingresar",
+"signIn": "Ingresar",
+"txtFilterBy": "Filtrar por :",
+"urlPhotoResume" : "https://declara.jne.gob.pe/Assets/Fotos-HojaVida",
+"urlPoliticalGroupSymbol":"https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo",
 "pageHomeWelcome": "Welcome {name}",
 "pageHomeWelcomeGender": "{gender, select, male {Hi man!} female {Hi woman!} other {Hi there!}}",
 "pageHomeWelcomeRole": "{role, select, admin {Hi admin!} manager {Hi manager!} other {Hi visitor!}}",

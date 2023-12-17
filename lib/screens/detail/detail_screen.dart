@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jne/configs/themes/app_colors.dart';
 import 'package:jne/controllers/home_controller.dart';
+import 'package:jne/generated/l10n.dart';
 import 'package:jne/models/cv.dart';
 import 'package:jne/models/user.dart';
 import 'package:jne/screens/detail/detail_information.dart';
@@ -75,11 +76,12 @@ class _DetailScreenState extends State<DetailScreen> {
                     children: [
                       Expanded(
                         child: Image.network(
-                            "https://declara.jne.gob.pe/Assets/Fotos-HojaVida/$idHojaVida.jpg"),
+                          "${S.current.urlPhotoResume}/$idHojaVida.jpg",
+                        ),
                       ),
                       Expanded(
                         child: Image.network(
-                          "https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo/$idOrgPol",
+                          "${S.current.urlPoliticalGroupSymbol}/$idOrgPol",
                         ),
                       ),
                     ],

@@ -61,10 +61,40 @@ class S {
   }
 
   /// `Sign in`
-  String get ingresar {
+  String get signIn {
     return Intl.message(
       'Sign in',
-      name: 'ingresar',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter by :`
+  String get txtFilterBy {
+    return Intl.message(
+      'Filter by :',
+      name: 'txtFilterBy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `https://declara.jne.gob.pe/Assets/Fotos-HojaVida`
+  String get urlPhotoResume {
+    return Intl.message(
+      'https://declara.jne.gob.pe/Assets/Fotos-HojaVida',
+      name: 'urlPhotoResume',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo`
+  String get urlPoliticalGroupSymbol {
+    return Intl.message(
+      'https://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Simbolo/GetSimbolo',
+      name: 'urlPoliticalGroupSymbol',
       desc: '',
       args: [],
     );

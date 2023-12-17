@@ -108,7 +108,7 @@ class BirthPlace extends StatelessWidget {
               fontSize: 15,
             ),
           ),
-          Text("Pais"),
+          const Text("Pais"),
           Text(
             data.paisNacimiento,
             style: const TextStyle(fontWeight: FontWeight.bold),

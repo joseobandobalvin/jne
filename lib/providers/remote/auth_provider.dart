@@ -1,10 +1,8 @@
-import 'dart:convert';
-
 import 'package:jne/helpers/http.dart';
 import 'package:jne/helpers/http_method.dart';
-import 'package:jne/models/cv.dart';
+
 import 'package:jne/providers/local/auth_client.dart';
-import 'package:get/get.dart';
+
 import 'package:http/http.dart' as http;
 
 class AuthProvider {

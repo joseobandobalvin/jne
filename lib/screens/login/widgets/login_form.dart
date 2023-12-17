@@ -68,7 +68,7 @@ class LoginForm extends GetView<AuthController> {
           ),
           const SizedBox(height: 20),
           RoundedButton(
-            label: S.of(context).ingresar,
+            label: S.current.signIn,
             onPressed: () => _submit(context),
             padding: const EdgeInsets.symmetric(vertical: 9, horizontal: 40),
           )

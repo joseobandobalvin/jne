@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:jne/configs/themes/app_colors.dart';
 import 'package:jne/controllers/home_controller.dart';
 import 'package:jne/controllers/search_controller.dart';
+import 'package:jne/generated/l10n.dart';
 import 'package:jne/models/cv.dart';
 import 'package:jne/screens/home/widgets/search_result_list.dart';
 import 'package:jne/widgets/card_stack.dart';
@@ -31,11 +32,11 @@ class CustomSearchDelegate extends SearchDelegate {
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              title: const Text("Filtrar por:"),
+              title: Text(S.current.txtFilterBy),
               content: Container(
                 width: double.infinity,
                 color: Colors.amber,
-                child: Text("Mensage."),
+                child: Text(S.current.signIn),
               ),
               actions: [
                 okButton,
